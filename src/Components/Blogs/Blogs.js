@@ -8,8 +8,8 @@ const Blogs = () => {
                 <hr className='w-75 mx-auto' />
                 <div className='row'>
                     <div className='col-lg-6 col-sm-12'>
-                        <h4>Node.js </h4>
-                        <p>NodeJS is a cross-platform and opensource Javascript runtime environment that allows the javascript to be run on the server-side. Nodejs allows Javascript code to run outside the browser. Nodejs comes with a lot of modules and mostly used in web development. </p>
+                        <h4> </h4>
+                        <p> </p>
                     </div>
                     <div className='col-lg-6 col-sm-12'>
                         <h4>Javascript </h4>
