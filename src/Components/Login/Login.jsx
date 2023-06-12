@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+const {signIn}= useContext(AuthContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("login clicked")
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log('Email:', e.target.email.value);
+    console.log('Password:', e.target.password.value);
+    const email=e.target.email.value;
+    const password=e.target.password.value;
+    signIn(email,password)
+    .then(res=>{
+        const user = res.user;
+        console.log(user)
+        alert("user is created")
+    })
   };
 
   return (
@@ -32,8 +32,6 @@ const Login = () => {
             id="email"
             type="email"
             placeholder="Enter your email"
-            value={email}
-            onChange={handleEmailChange}
           />
         </div>
         <div className="mb-4">
@@ -45,8 +43,6 @@ const Login = () => {
             id="password"
             type="password"
             placeholder="Enter your password"
-            value={password}
-            onChange={handlePasswordChange}
           />
         </div>
         <div className="flex items-center justify-between">

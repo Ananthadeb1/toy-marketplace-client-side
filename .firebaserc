@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "toy-house-3ab3f"
-  }
+    "default": "toy-house-f433d",
+    "staging": "toy-house-f433d"
+  },
+  "targets": {},
+  "etags": {}
 }
