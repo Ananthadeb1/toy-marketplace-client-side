@@ -1,19 +1,21 @@
-import React from 'react';
 
 const Blogs = () => {
     return (
         <div>
             <section className='mx-5 px-5 mt-5'>
-                <div><h1>Difference between Node.js and js</h1></div>
+                <div><h1>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1></div>
                 <hr className='w-75 mx-auto' />
                 <div className='row'>
                     <div className='col-lg-6 col-sm-12'>
-                        <h4> </h4>
-                        <p> </p>
+                        <h4>Access token and refresh token: </h4>
+                        <p>An access token and a refresh token are two commonly used concepts in authentication and authorization systems. They play a crucial role in securely accessing and refreshing authorization credentials for a user or an application </p>
                     </div>
                     <div className='col-lg-6 col-sm-12'>
-                        <h4>Javascript </h4>
-                        <p>Javascript is a Scripting language. It is mostly abbreviated as JS. It can be said that Javascript is the updated version of the ECMA script. Javascript is a high-level programming language that uses the concept of Oops but it is based on prototype inheritance.</p>
+                        <h4>work and where should we store:  </h4>
+                        <p>Client-side refers to the part of the application that runs on the users device (usually a web browser) and is responsible for handling the user interface and interactions. Server-side refers to the part of the application that runs on the server and is responsible for processing requests, performing business logic, and interacting with databases or other external systems.
+
+                            Also we should store it in the local sotorage or in the cookies.But cookies is batter.
+                        </p>
                     </div>
                 </div>
             </section>
