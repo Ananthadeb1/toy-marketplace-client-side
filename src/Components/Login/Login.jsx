@@ -1,7 +1,8 @@
-import { GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
@@ -12,6 +13,7 @@ const Login = () => {
   console.log(from);
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    console.log("login")
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -22,7 +24,7 @@ const Login = () => {
         const currentUser = {
           email: user.email,
         };
-        toast.success("Login Successfull", {
+        toast.success("Login Successful", {
           style: {
             border: "1px solid #713200",
             padding: "16px",
@@ -33,8 +35,6 @@ const Login = () => {
             secondary: "#FFFAEE",
           },
         });
-
-        
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -43,14 +43,14 @@ const Login = () => {
       });
     form.reset();
   };
-  const handlegoogleSignIn = () => {
+  const handleGoogleSignIn = () => {
     googleSignIn(googleProvider)
       .then((result) => {
         const user = result.user;
         const currentUser = {
           email: user.email,
         };
-        toast.success("Login Successfull", {
+        toast.success("Login Successful", {
           style: {
             border: "1px solid #713200",
             padding: "16px",
@@ -86,7 +86,7 @@ const Login = () => {
             </div>
             <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12">
               <button
-                onClick={handlegoogleSignIn}
+                onClick={handleGoogleSignIn}
                 type="button"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
@@ -94,7 +94,7 @@ const Login = () => {
               >
                 Sign in with Google
               </button>
-              <from onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit}>
                 <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
                   <p className="text-center font-semibold mx-4 mb-0">Or</p>
                 </div>
@@ -126,7 +126,7 @@ const Login = () => {
                 </div>
                 <div className="text-center lg:text-left">
                   <button
-                    type="submit"
+                  type="submit"
                     className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Login
@@ -140,7 +140,7 @@ const Login = () => {
                     </Link>
                   </p>
                 </div>
-              </from>
+              </form>
             </div>
           </div>
         </div>

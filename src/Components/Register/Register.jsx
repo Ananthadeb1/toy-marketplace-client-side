@@ -1,10 +1,12 @@
 import { GoogleAuthProvider, updateProfile } from 'firebase/auth';
 import React, { useContext } from 'react';
-import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import useTitle from '../hook/hook';
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
+    useTitle(Register)
     const navigate = useNavigate()
     const { signUp, googleSignIn } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
