@@ -7,7 +7,7 @@ const Header = () => {
   console.log("header: ", user?.photoURL);
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-slate-900 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label className="btn btn-ghost lg:hidden">
@@ -28,7 +28,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 p-2 bg-slate-900 text-white shadow rounded-box w-52"
             >
               <li>
                 <a>Item 1</a>

@@ -1,57 +1,73 @@
 import { createContext, useEffect, useState } from "react";
 import { app } from "../../firebase.init";
-import{createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "firebase/auth"
-
-export const auth = getAuth(app)
-export const AuthContext = createContext(null);
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 
 
-const AuthProvider = ({children}) => {
+export const AuthContext = createContext();
+const auth = getAuth(app);
 
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-   const [user , setUser ] = useState(null);
-
-   const createUser = (email, password) => {
-    // setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
-}
-
-const signIn = (email, password) => {
-    // setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
-}
-
-const logOut = () =>{
-    return signOut(auth);
-}
-
-useEffect( ()=>{
-    const unsubscribe = onAuthStateChanged(auth, currentUser => {
-        setUser(currentUser);
-        // setLoading(false);
-    });
-
-    // stop observing while unmounting 
-    return () =>{
-        return unsubscribe();
+    // email password register
+    const signUp = (email, password) => {
+        setLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password)
     }
-}, [])
 
-const authInfo = {
-    user,
-    // loading,
-    createUser,
-    signIn,
-    logOut
-}
+    //login
+    const signIn = (email, password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    //sign in with google
+    const googleSignIn = (provider) => {
+        setLoading(true)
+        return signInWithPopup(auth, provider)
+    }
+
+    // log out 
+
+    const logOut = () => {
+        setLoading(true)
+        localStorage.removeItem('packers-token')
+        return signOut(auth)
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+            });
+    }
+
+    // user observer 
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+            setLoading(false);
+        })
+        return () => {
+            return unsubscribe();
+        }
+    }, [])
+
+
+    const authInfo = {
+        user,
+        loading,
+        signUp,
+        signIn,
+        googleSignIn,
+        logOut
+    }
+
     return (
-        <div>
-            <AuthContext.Provider value={authInfo}>
+        <AuthContext.Provider value={authInfo}>
             {children}
         </AuthContext.Provider>
-        </div>
     );
 };
-
 
 export default AuthProvider;
