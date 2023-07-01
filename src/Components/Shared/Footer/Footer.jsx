@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCopyright, FaRegCopyright } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -158,6 +159,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+      <p className="text-center pb-2"><FaRegCopyright className="inline"></FaRegCopyright> All rights resarved by Toyland || 2023 </p>
     </footer>
   );
 };
