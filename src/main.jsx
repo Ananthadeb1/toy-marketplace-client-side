@@ -1,20 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Home from './Components/Home/Home';
-import Blogs from './Components/Blogs/Blogs';
-import MainHome from './Components/MainHome/MainHome';
-import AuthProvider from './Components/Provider/AuthProvider';
-import Login from './Components/Login/Login';
-import Register from './Components/Register/Register';
-import ErrorPage from './Components/ErrorPage/ErrorPage';
-import { Toaster } from 'react-hot-toast';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import AllToys from './Components/AllToys/AllToys'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import Blogs from "./Components/Blogs/Blogs";
+import MainHome from "./Components/MainHome/MainHome";
+import AuthProvider from "./Components/Provider/AuthProvider";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
+import ErrorPage from "./Components/ErrorPage/ErrorPage";
+import { Toaster } from "react-hot-toast";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import AllToys from "./Components/AllToys/AllToys";
+import ToyDetails from "./Components/AllToys/ToyDetails/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,40 +21,46 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path:"/",
-        element:<MainHome></MainHome>
+        path: "/",
+        element: <MainHome></MainHome>,
       },
       {
         path: "blogs/",
-        element: <PrivateRoute><Blogs></Blogs></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <Blogs></Blogs>
+          </PrivateRoute>
+        ),
       },
       {
         path: "login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "alltoys",
-        element: <AllToys></AllToys>
-      }
-
-    ]
+        element: <AllToys></AllToys>,
+      },
+      {
+        path: "/toy/:id",
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/toy/${params.id}`
+          ),
+        element: <ToyDetails></ToyDetails>,
+      },
+    ],
   },
-
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-      />
+      <Toaster position="top-center" reverseOrder={false} />
       <RouterProvider router={router} />
     </AuthProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
