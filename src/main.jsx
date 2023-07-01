@@ -50,7 +50,7 @@ const router = createBrowserRouter([
           fetch(
             `http://localhost:5000/toy/${params.id}`
           ),
-        element: <ToyDetails></ToyDetails>,
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
       },
     ],
   },
