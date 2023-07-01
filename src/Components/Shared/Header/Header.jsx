@@ -39,7 +39,7 @@ const Header = () => {
                                 <NavLink to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Home</NavLink>
                             </li>
                             <li className="flex">
-                                <NavLink to="/toys" className={({ isActive }) =>
+                                <NavLink to="/alltoys" className={({ isActive }) =>
                                     isActive ? 'flex items-center px-4 -mb-1  text-orange-600' : 'flex items-center px-4 -mb-1 border-b-2 border-transparent'}>All Toys</NavLink>
                             </li>
                             <li className="flex my-2">
@@ -53,7 +53,7 @@ const Header = () => {
                                 </li>
                                 <li className="flex my-2">
                                     <NavLink to="/addtoy" className={({ isActive }) =>
-                                        isActive ? 'flex items-center px-4 -mb-1 text-orange-600' : 'flex items-center px-4 -mb-1 border-b-2 border-transparent'}>Add Toy</NavLink>
+                                        isActive ? 'flex items-center px-4 -mb-1 text-orange-600' : 'flex items-center px-4 -mb-1 border-b-2 border-transparent'}>Add A Toy</NavLink>
                                 </li>
                                 <li className="flex my-2" onClick={handleLogOut}>
                                     <NavLink to="" className='outline outline-4 flex items-center px-4 -mb-1 mx-4 border-b-2 border-transparent'>Logout</NavLink>

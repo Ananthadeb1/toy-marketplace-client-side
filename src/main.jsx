@@ -14,6 +14,7 @@ import Register from './Components/Register/Register';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import { Toaster } from 'react-hot-toast';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import AllToys from './Components/AllToys/AllToys'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>
+      },
+      {
+        path: "alltoys",
+        element: <AllToys></AllToys>
       }
 
     ]
