@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCopyright, FaRegCopyright } from "react-icons/fa";
+import {FaRegCopyright} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
