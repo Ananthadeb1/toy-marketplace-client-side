@@ -1,68 +1,38 @@
-import React from "react";
+import React from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
-  return (
-    <div>
-      <div className="carousel w-full max-h-[550px]">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img
-            src="https://img.freepik.com/premium-photo/lego-batman-figure-with-bat-its-head-lego-piece-background_920631-18.jpg?w=360"
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img
-            src="https://www.shopdisney.in/media/June/MarvelFranchiseBanner.jpg"
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa3IXW6PRxVSVvljgGG_Hcdpsi0XXVV8ITN_VwKN4b9eNJzlgswPg9evMMzmEmFfuLgwk&usqp=CAU"
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS02XgNVfzF7ze0DD_Ng1rsFxHqPvz8YZAwMLqtmfYNBEJ9g4frhciJltzRj6dumOaeM88&usqp=CAU"
-            className="w-full"
-          />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <Carousel>
+            <div className='relative'>
+                <img src="https://img.freepik.com/free-photo/red-pickup-model-black-floor_1150-16351.jpg?w=996&t=st=1688207377~exp=1688207977~hmac=d3d3f7c052fdd585bfe0c51a924c7d704c5d783f2401820697d81ffcd08d3b4e" className='h-full' alt="" />
+                <div className="absolute top-1/4 left-10 text-white w-3/4 text-left ">
+                    <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold'>We Deliver Your <br /> Product Safe & <br />Secure</h1>
+                    <p className='mt-3 hidden lg:block w-3/5'>Are you looking for a Reputed And Trusted Movers and Packers Service Provider?We are always at your service to meet up all the requirements related to Packing And Moving Services. </p>
+                    <Link to='/services'>
+                        <button className="bg-white hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-3">
+                            More Details
+                        </button>
+                    </Link>
+                </div>
+
+            </div>
+            <div>
+                <img src="https://img.freepik.com/free-photo/toy-car-with-red-bow_23-2147959975.jpg?t=st=1688207544~exp=1688208144~hmac=153e1411c1614f3defa9e062af2b3722a58010c66e39fb4f6a723428a37feb79"  alt="" />
+                <div className="absolute top-1/4 left-10 text-white w-3/4 text-left ">
+                    <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold'>We Deliver Your <br /> Product Safe & <br />Secure</h1>
+                    <p className='mt-3 hidden lg:block w-3/5'>Are you looking for a Reputed And Trusted Movers and Packers Service Provider?We are always at your service to meet up all the requirements related to Packing And Moving Services. </p>
+                    <Link to='/services'>
+                        <button className="bg-white hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4 rounded my-3">
+                            More Details
+                        </button>
+                    </Link>
+                </div>
+            </div>
+        </Carousel>
+    );
 };
 
 export default Banner;
