@@ -20,7 +20,7 @@ const Blogs = () => {
                 </div>
             </section>
             <section className='mx-5 px-5 mt-5'>
-                <div><h1>Difference between SQL and NoSQL</h1></div>
+                <div><h1>Compare SQL and NoSQL databases?</h1></div>
                 <hr className='w-75 mx-auto' />
                 <div className='row'>
                     <div className='col-lg-6 col-sm-12'>
@@ -34,11 +34,20 @@ const Blogs = () => {
                 </div>
             </section>
             <section className='mx-5 px-5 mt-5'>
-                <div><h1>What is JWT ??</h1></div>
+                <div><h1>What is express js? What is Nest JS?</h1></div>
+                <h4>express js</h4>
                 <hr className='w-75 mx-auto' />
-                <p>JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued.</p>
-                <h4>How it works ?? </h4>
-                <p>JWTs differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted.</p>
+                <p>Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application. It's a layer built on the top of the Node js that helps manage servers and routes.</p>
+                <h4>Next js </h4>
+                <p>Next.js is a React framework that gives you building blocks to create web applications. By framework, we mean Next.js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.</p>
+            </section>
+            <section className='mx-5 px-5 mt-5'>
+                <div><h1>What is MongoDB aggregate and how does it work?</h1></div>
+                <h4>MongoDB aggregate</h4>
+                <hr className='w-75 mx-auto' />
+                <p>What is Aggregation in MongoDB? Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.</p>
+                <h4>how does it work? </h4>
+                <p>In MongoDB, aggregation operations process the data records/documents and return computed results. It collects values from various documents and groups them together and then performs different types of operations on that grouped data like sum, average, minimum, maximum, etc to return a computed result.</p>
             </section>
         </div>
     );
