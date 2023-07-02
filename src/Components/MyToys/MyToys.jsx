@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import MySingleToy from "./MySingleToy";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const MyToys = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -56,6 +57,9 @@ const MyToys = () => {
   }
   return (
     <>
+    <Helmet>
+        <title>Toy Land - My Toys</title>
+    </Helmet>
       <h1 className="text-center text-5xl font-bold underline text-orange-600 my-6">
         My Toys
       </h1>

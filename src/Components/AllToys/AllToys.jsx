@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "react-loader-spinner";
 import Toy from "./Toy";
+import { Helmet } from "react-helmet";
 
 const toys = () => {
   const [loading, setLoading] = useState(false);
@@ -16,6 +17,9 @@ const toys = () => {
   }, []);
   return (
     <>
+    <Helmet>
+        <title>Toy Land - All Toys</title>
+    </Helmet>
       {loading ? (
         <div className="w-28 h-28 mx-auto my-60">
           <Grid

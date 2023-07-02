@@ -23,6 +23,9 @@ const ToysSample = () => {
   const mini_Police_Car = toys.filter((toy) => toy.sub_category === "Mini Police Car");
   return (
     <>
+    <h1 className="text-center text-5xl font-bold underline text-orange-600 my-6">
+        Toys Sample
+      </h1>
       <Tabs>
         <TabList>
           <Tab>Sports Car</Tab>

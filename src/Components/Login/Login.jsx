@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
@@ -69,8 +70,11 @@ const Login = () => {
       });
   };
 
-  return (
+return (
     <>
+    <Helmet>
+        <title>Toy Land - Login</title>
+    </Helmet>
       <div className="h-screen mb-28">
         <div className="px-6 h-full text-gray-800">
           <h1 className="font-bold text-5xl underline text-orange-600">

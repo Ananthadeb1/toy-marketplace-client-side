@@ -14,8 +14,9 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AllToys from "./Components/AllToys/AllToys";
 import ToyDetails from "./Components/AllToys/ToyDetails/ToyDetails";
 import AddAToy from "./Components/AddAToy/AddAToy";
-import MyToys from "./Components/MyToys/MyToys"
+import MyToys from "./Components/MyToys/MyToys";
 import EditToy from "./Components/MyToys/EditToy";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -54,26 +55,40 @@ const router = createBrowserRouter([
       },
       {
         path: "addtoy",
-        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <AddAToy></AddAToy>
+          </PrivateRoute>
+        ),
       },
       {
         path: "mytoys",
-        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
       {
-        path: 'mytoys/:id',
+        path: "mytoys/:id",
         loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
-        element: <PrivateRoute><EditToy></EditToy></PrivateRoute>
-    }
+        element: (
+          <PrivateRoute>
+            <EditToy></EditToy>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <Toaster position="top-center" reverseOrder={false} />
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <Toaster position="top-center" reverseOrder={false} />
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
