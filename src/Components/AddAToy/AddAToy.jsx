@@ -31,7 +31,7 @@ const AddAToy = () => {
       rating,
       product_description,
     };
-    fetch("http://localhost:5000/addtoy", {
+    fetch("https://toy-house-server-site-assignment-11-fucdnm1z5-ananthadeb1.vercel.app/addtoy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

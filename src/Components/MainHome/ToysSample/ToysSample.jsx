@@ -11,7 +11,7 @@ const ToysSample = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toyssample")
+    fetch("https://toy-house-server-site-assignment-11-fucdnm1z5-ananthadeb1.vercel.app/toyssample")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

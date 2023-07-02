@@ -29,7 +29,7 @@ const EditToy = () => {
       price:newPrice,
       product_description: newDescription,
     };
-    fetch(`http://localhost:5000/mytoys/${_id}`, {
+    fetch(`https://toy-house-server-site-assignment-11-fucdnm1z5-ananthadeb1.vercel.app/mytoys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
