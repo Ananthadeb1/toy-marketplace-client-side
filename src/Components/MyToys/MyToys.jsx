@@ -23,7 +23,7 @@ const MyToys = () => {
     }
   }, [user?.email, logOut]);
 
-  const handleDelete = (id) => {console.log(id)
+  const handleDelete = (id) => {
       Swal.fire({
           title: 'Are you sure?',
           text: "You won't be able to revert this!",
