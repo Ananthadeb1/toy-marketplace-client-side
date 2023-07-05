@@ -9,7 +9,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   useEffect(() => {
     if (user?.email) {
-      fetch(`https://toy-house-server-site-assignment-11-fucdnm1z5-ananthadeb1.vercel.app/mytoys?email=${user?.email}`, {
+      fetch(`https://toy-house-server-site-assignment-11.vercel.app/mytoys?email=${user?.email}`, {
         headers: {
           authorization: "Bearer",
         },
@@ -36,7 +36,7 @@ const MyToys = () => {
       }).then((result) => {
         console.log(result)
           if (result.isConfirmed) {
-              fetch(`https://toy-house-server-site-assignment-11-fucdnm1z5-ananthadeb1.vercel.app/mytoys/${id}`, {
+              fetch(`https://toy-house-server-site-assignment-11.vercel.app/mytoys/${id}`, {
                   method: 'DELETE'
               })
                   .then(res => res.json())

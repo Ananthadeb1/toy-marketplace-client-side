@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/toy/:id",
-        loader: ({ params }) => fetch(`https://toy-house-server-site-assignment-11-fucdnm1z5-ananthadeb1.vercel.app/toy/${params.id}`),
+        loader: ({ params }) => fetch(`https://toy-house-server-site-assignment-11.vercel.app/toy/${params.id}`),
         element: (
           <PrivateRoute>
             <ToyDetails></ToyDetails>
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
       },
       {
         path: "mytoys/:id",
-        loader: ({ params }) => fetch(`https://toy-house-server-site-assignment-11-fucdnm1z5-ananthadeb1.vercel.app/toy/${params.id}`),
+        loader: ({ params }) => fetch(`https://toy-house-server-site-assignment-11.vercel.app/toy/${params.id}`),
         element: (
           <PrivateRoute>
             <EditToy></EditToy>
