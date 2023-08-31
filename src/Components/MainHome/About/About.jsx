@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
-        <section className="bg-gray-50 text-black pt-8">
-            <h1 className='font-bold text-4xl text-center underline lg:my-6 text-orange-600'>About Us</h1>
+        <section className="text-black pt-8">
+            <h1 className='font-bold text-5xl text-center  mb-10'>About Us</h1>
             <div className="container flex flex-col justify-center p-6 mx-auto  lg:flex-row lg:justify-between">
                 <div className="flex lg:mt-20 items-center justify-center  lg:p-6   h-72 lg:h-96 xl:h-112 2xl:h-128">
                     <img src="https://img.freepik.com/free-photo/mechanic-standing-with-arms-crossed_1170-1346.jpg?w=996&t=st=1688221363~exp=1688221963~hmac=3009eade3848f9238856fa91a336e46c4e265845a16e51fd3337ec9eb9fed0bf" alt="" className="object-contain lg:mt-5  h-80 lg:h-[50rem] xl:h-112 2xl:h-128" />

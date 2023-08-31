@@ -4,6 +4,12 @@ import OurTeam from "./OurTeam/OurTeam";
 import About from "./About/About";
 import ToysSample from "./ToysSample/ToysSample";
 import { Helmet } from "react-helmet";
+import Investkid from "./InvestKid/Investkid";
+import Customersays from "./Customersays/Customersays";
+import Yourinsta from "./Yourinsta/Yourinsta";
+import Howworks from "./Howworks/Howworks";
+import Offerbanner from "./Offerbanner/Offerbanner";
+import Finesttoy from "./Finesttoy/Finesttoy";
 
 const MainHome = () => {
   return (
@@ -14,8 +20,17 @@ const MainHome = () => {
       <Banner></Banner>
       <div className="mx-12">
         <About></About>
+        <Howworks></Howworks>
+        <Investkid></Investkid>
         <ToysSample></ToysSample>
+      </div>
+      <Offerbanner></Offerbanner>
+      <div className="mx-12">
+      <Customersays></Customersays>
+      <Yourinsta></Yourinsta>
+      <Finesttoy></Finesttoy>
         <OurTeam></OurTeam>
+        
       </div>
     </div>
   );
