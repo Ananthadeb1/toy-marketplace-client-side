@@ -12,9 +12,11 @@ const MainHome = () => {
         <title>Toy Land</title>
       </Helmet>
       <Banner></Banner>
-      <About></About>
-      <ToysSample></ToysSample>
-      <OurTeam></OurTeam>
+      <div className="mx-12">
+        <About></About>
+        <ToysSample></ToysSample>
+        <OurTeam></OurTeam>
+      </div>
     </div>
   );
 };

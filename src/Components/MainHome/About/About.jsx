@@ -15,7 +15,7 @@ const About = () => {
                     <p className="mt-6 mb-8 text-lg sm:mb-12">The Toyland  is one of the leading reputed online toy maker and seller platform in Bangladesh that started its journey in 2006 with an objective to make the search for a customized and qualitifull toy for your child. This website is a resourceful online database where people can find a list of toys. we are available in Dhaka, Chittagong, Barishal, Kishoreganj, and other big and small cities.
                     </p>
                     <Link to='/blogs'>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold hover:text-white py-2 px-4 rounded my-3">
+                        <button className="btn border-none rounded-3xl bg-[#febf00] hover:bg-black text-black font-semibold hover:text-white py-2 px-4 my-3">
                             More About Us
                         </button>
                     </Link>

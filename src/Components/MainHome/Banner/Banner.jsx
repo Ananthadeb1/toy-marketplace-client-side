@@ -12,7 +12,7 @@ const Banner = () => {
                     <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold'>We are maintain our <br /> Product quality & <br />Premiumness</h1>
                     <p className='mt-3 hidden lg:block w-3/5'>Are you looking for a Reputed And Trusted toy seller?We are always at your service to meet up all the requirements related to kids dream.  </p>
                     <Link to='/services'>
-                        <button className="bg-white hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-3">
+                        <button className="btn border-none rounded-3xl bg-[#febf00]  hover:bg-white text-black font-semibold hover:text-black py-2 px-4   my-3">
                             More Details
                         </button>
                     </Link>
@@ -25,7 +25,7 @@ const Banner = () => {
                     <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold'>We are maintain our <br /> Product quality & <br />Premiumness</h1>
                     <p className='mt-3 hidden lg:block w-3/5'>Are you looking for a Reputed And Trusted toy seller?We are always at your service to meet up all the requirements related to kids dream. </p>
                     <Link to='/services'>
-                        <button className="bg-white hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4 rounded my-3">
+                        <button className="btn border-none rounded-3xl bg-[#febf00]  hover:bg-white text-black font-semibold  py-2 px-4 my-3">
                             More Details
                         </button>
                     </Link>

@@ -19,7 +19,7 @@ const ToyCard = ({ toy }) => {
           <h1><span className="font-semibold text-lg">Available:  </span><span>{quantity} pieces</span></h1>
           <h1><span className="font-semibold text-lg">Rating: </span><span>{rating}</span></h1>
           <div className="card-actions justify-end">
-            <Link to={`/toy/${_id}`}><button className="btn btn-primary">View details</button></Link>
+            <Link to={`/toy/${_id}`}><button className="btn border-none rounded-3xl bg-[#febf00] hover:bg-black text-black font-semibold hover:text-white py-2 px-4  my-3">View details</button></Link>
           </div>
         </div>
       </div>

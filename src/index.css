@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 :root{
-    background-color: white; /* Replace #fff with the desired light color */
+    background-color: #F9FAFB; /* Replace #fff with the desired light color */
     color: black;
-    margin:0 3rem;
   }
