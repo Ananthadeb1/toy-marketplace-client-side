@@ -32,7 +32,7 @@ const OurTeam = () => {
     return (
         <>
             <h1 className='text-center text-4xl font-bold underline text-orange-600 my-6'>Our Team</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5'>
+            <div className='mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5'>
                 {
                     teamDetails.map((member, idx) => <SingleMember key={idx} member={member}></SingleMember>)
                 }
