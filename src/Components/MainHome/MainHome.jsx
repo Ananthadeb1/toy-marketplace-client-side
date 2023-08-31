@@ -27,8 +27,8 @@ const MainHome = () => {
       <Offerbanner></Offerbanner>
       <div className="mx-12">
       <Customersays></Customersays>
-      <Yourinsta></Yourinsta>
       <Finesttoy></Finesttoy>
+      <Yourinsta></Yourinsta>
         <OurTeam></OurTeam>
         
       </div>
